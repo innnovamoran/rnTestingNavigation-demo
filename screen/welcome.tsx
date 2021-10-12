@@ -3,7 +3,7 @@ import React, {FC} from 'react';
 import {SafeAreaView, Text, TouchableOpacity} from 'react-native';
 
 const WelcomeScreen: FC = (): JSX.Element => {
-  const {navigate} = useNavigation();
+  // const {navigate} = useNavigation();
   return (
     <SafeAreaView>
       <Text>Welcome Screen</Text>
@@ -19,7 +19,7 @@ const WelcomeScreen: FC = (): JSX.Element => {
           borderRadius: 20,
         }}
         onPress={() => {
-          navigate('signin' as never);
+          // navigate('signin' as never);
         }}>
         <Text>Ir a signin</Text>
       </TouchableOpacity>
@@ -35,7 +35,7 @@ const WelcomeScreen: FC = (): JSX.Element => {
           borderRadius: 20,
         }}
         onPress={() => {
-          navigate('signup' as never);
+          //   navigate('signup' as never);
         }}>
         <Text>Ir a signup</Text>
       </TouchableOpacity>
