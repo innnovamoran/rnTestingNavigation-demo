@@ -1,13 +1,14 @@
-import {useNavigation} from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/native';
 import React, {FC} from 'react';
 import {SafeAreaView, Text, TouchableOpacity} from 'react-native';
 
 const WelcomeScreen: FC = (): JSX.Element => {
-  // const {navigate} = useNavigation();
+  const {navigate} = useNavigation();
   return (
     <SafeAreaView>
       <Text>Welcome Screen</Text>
       <TouchableOpacity
+        testID={'btn-welcome-nav-signin'}
         style={{
           backgroundColor: '#880e4f',
           width: '90%',
@@ -19,11 +20,12 @@ const WelcomeScreen: FC = (): JSX.Element => {
           borderRadius: 20,
         }}
         onPress={() => {
-          // navigate('signin' as never);
+          navigate('signin' as never);
         }}>
         <Text>Ir a signin</Text>
       </TouchableOpacity>
       <TouchableOpacity
+        testID={'btn-welcome-nav-signup'}
         style={{
           backgroundColor: '#880e4f',
           width: '90%',
@@ -35,7 +37,7 @@ const WelcomeScreen: FC = (): JSX.Element => {
           borderRadius: 20,
         }}
         onPress={() => {
-          //   navigate('signup' as never);
+          navigate('signup' as never);
         }}>
         <Text>Ir a signup</Text>
       </TouchableOpacity>

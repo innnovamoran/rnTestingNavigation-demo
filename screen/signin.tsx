@@ -4,7 +4,7 @@ import {SafeAreaView, Text} from 'react-native';
 const SigninScreen: FC = (): JSX.Element => {
   return (
     <SafeAreaView>
-      <Text>Signin Screen</Text>
+      <Text testID={'title-signin'}>Signin Screen</Text>
     </SafeAreaView>
   );
 };
