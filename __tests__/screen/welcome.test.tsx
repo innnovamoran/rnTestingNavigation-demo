@@ -2,14 +2,26 @@ import React, {Component} from 'react';
 import {render, fireEvent} from '@testing-library/react-native';
 import WelcomeScreen from '../../screen/welcome';
 
+import {device, expect, element, by, waitFor} from 'detox';
+
 describe('Testing welcome screen', () => {
   // beforeEach
   // afterEach
+  beforeAll(async () => {
+    await device.launchApp();
+  });
+  beforeEach(async () => {
+    await device.reloadReactNative();
+  });
 
   test('should be render welcome screen?', () => {
     render(<WelcomeScreen />);
   });
-  test('should be navigate to signin screen?', () => {
+
+  it('should have btn signin screen?', async () => {
+    await expect(element(by.id('btn-welcome-nav-signin'))).toBeVisible();
+  });
+  /*   test('should be navigate to signin screen?', () => {
     const {getByTestId, findByTestId} = render(<WelcomeScreen />);
     const btnSignin = getByTestId('btn-welcome-nav-signin');
     expect(btnSignin).toBeTruthy();
@@ -24,7 +36,7 @@ describe('Testing welcome screen', () => {
     fireEvent(getByTestId('btn-welcome-nav-signup'), 'onPress');
     const newScreen = findByTestId('title-signup');
     expect(newScreen).toBeTruthy();
-  });
+  }); */
 });
 
 //btn-welcome-nav-signin

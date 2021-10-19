@@ -5,7 +5,7 @@ import App from '../App';
 import {render} from '@testing-library/react-native';
 
 describe('Testing App.tsx', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     jest.useFakeTimers(); // prev warn mock
   });
   test('should be init app?', () => {
