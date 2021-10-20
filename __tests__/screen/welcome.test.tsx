@@ -10,18 +10,36 @@ describe('Testing welcome screen', () => {
   beforeAll(async () => {
     await device.launchApp();
   });
-  beforeEach(async () => {
+/*   beforeEach(async () => {
     await device.reloadReactNative();
+  }); */
+
+  it('should have welcome screen', async () => {
+    await expect(element(by.id('welcome'))).toBeVisible();
   });
 
-  test('should be render welcome screen?', () => {
+  it('should show hello screen after tap', async () => {
+    await element(by.id('hello_button')).tap();
+    await expect(element(by.text('Hello!!!'))).toBeVisible();
+  });
+
+  it('should show world screen after tap', async () => {
+    await element(by.id('world_button')).tap();
+    await expect(element(by.text('World!!!'))).toBeVisible();
+  });
+});
+
+//btn-welcome-nav-signin
+//btn-welcome-nav-signup
+
+/*  test('should be render welcome screen?', () => {
     render(<WelcomeScreen />);
   });
 
   it('should have btn signin screen?', async () => {
     await expect(element(by.id('btn-welcome-nav-signin'))).toBeVisible();
-  });
-  /*   test('should be navigate to signin screen?', () => {
+  }); */
+/*   test('should be navigate to signin screen?', () => {
     const {getByTestId, findByTestId} = render(<WelcomeScreen />);
     const btnSignin = getByTestId('btn-welcome-nav-signin');
     expect(btnSignin).toBeTruthy();
@@ -37,7 +55,3 @@ describe('Testing welcome screen', () => {
     const newScreen = findByTestId('title-signup');
     expect(newScreen).toBeTruthy();
   }); */
-});
-
-//btn-welcome-nav-signin
-//btn-welcome-nav-signup
