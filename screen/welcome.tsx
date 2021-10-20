@@ -6,7 +6,7 @@ const WelcomeScreen: FC = (): JSX.Element => {
   const {navigate} = useNavigation();
   return (
     <SafeAreaView>
-      <Text>Welcome Screen</Text>
+      <Text testID={'welcome-title'}>Welcome Screen</Text>
       <TouchableOpacity
         testID={'btn-welcome-nav-signin'}
         style={{
